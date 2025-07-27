@@ -1,0 +1,22 @@
+{
+  "sanguineo": {
+    "desc": "...",
+    "combinations": { "colerico": "...", "melancolico": "...", "flematico": "..." }
+  },
+  "colerico": {
+    "desc": "...",
+    "combinations": { "sanguineo": "...", "melancolico": "...", "flematico": "..." }
+  },
+  "melancolico": {
+    "desc": "...",
+    "combinations": { "sanguineo": "...", "colerico": "...", "flematico": "..." }
+  },
+  "flematico": {
+    "desc": "...",
+    "combinations": {
+      "sanguineo": "...",
+      "colerico": "...",
+      "melancolico": "..."
+    }
+  }
+}
