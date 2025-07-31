@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+/* bg-[#132539ff] */
+.hero-gradient {
+  background: #e5e7eb;
+  background: linear-gradient(#0ea5e9 50%, #f3f4f6 100%);
+}
+
+@media screen and (min-width: 768px) {
+  .hero-gradient {
+    background: #e5e7eb;
+    background: linear-gradient(#0ea5e9 20%, #f3f4f6 100%);
+  }
+}
