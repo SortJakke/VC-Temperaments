@@ -1,22 +1,234 @@
 {
-  "sanguineo": {
-    "desc": "...",
-    "combinations": { "colerico": "...", "melancolico": "...", "flematico": "..." }
-  },
-  "colerico": {
-    "desc": "...",
-    "combinations": { "sanguineo": "...", "melancolico": "...", "flematico": "..." }
-  },
-  "melancolico": {
-    "desc": "...",
-    "combinations": { "sanguineo": "...", "colerico": "...", "flematico": "..." }
-  },
-  "flematico": {
-    "desc": "...",
+  "sanguine": {
+    "desc": "O sanguíneo é o comunicador nato. Extrovertido, entusiasmado e sociável, esse temperamento vive o presente com intensidade. Pessoas sanguíneas têm facilidade em fazer amigos, são espontâneas e adoram estar no centro das atenções.",
     "combinations": {
-      "sanguineo": "...",
-      "colerico": "...",
-      "melancolico": "..."
+      "choleric": {
+        "desc": "Essa combinação une a energia social do sanguíneo com a determinação do colérico. O resultado é uma personalidade extremamente ativa, carismática e voltada para ação. Essas pessoas são líderes naturais, com grande capacidade de motivar os outros e de transformar ideias em realidade.",
+        "characteristic": [
+          "Extrovertido e assertivo",
+          "Gosta de estar no centro das atenções e de comandar",
+          "Tem facilidade em tomar decisões rápidas"
+        ],
+        "challenges": [
+          "Pode ser impulsivo e dominante",
+          "Tende a negligenciar detalhes ou sentimentos alheios"
+        ],
+        "skills": [
+          "Ambientes dinâmicos",
+          "liderança de equipes",
+          "vendas",
+          "empreendedorismo"
+        ]
+      },
+      "melancholic": {
+        "desc": "Aqui temos uma mistura de entusiasmo com profundidade emocional. Essa combinação gera uma personalidade criativa, sensível e expressiva. O sanguíneo traz leveza e sociabilidade, enquanto o melancólico adiciona introspecção e senso estético.",
+        "characteristic": [
+          "Sociável, mas com momentos de introspecção",
+          "Criativo e emocionalmente intenso",
+          "Gosta de se expressar artisticamente"
+        ],
+        "challenges": [
+          "Pode oscilar entre euforia e melancolia",
+          "Tende a procrastinar ou se perder em pensamentos"
+        ],
+        "skills": [
+          "Artes",
+          "Comunicação",
+          "Psicologia",
+          "Ambientes que valorizem expressão pessoal"
+        ]
+      },
+      "phlegmatic": {
+        "desc": "Essa é uma combinação leve e amigável. O sanguíneo traz espontaneidade e entusiasmo, enquanto o fleumático contribui com paciência e estabilidade. Pessoas com esse perfil são naturalmente agradáveis, conciliadoras e muito queridas socialmente.",
+        "characteristic": [
+          "Sociável, gentil e bem-humorado",
+          "Evita conflitos e busca harmonia",
+          "Tem facilidade em se adaptar a diferentes grupos"
+        ],
+        "challenges": [
+          "Pode evitar responsabilidades ou decisões difíceis",
+          "Tende à dispersão e à falta de foco"
+        ],
+        "skills": [
+          "Trabalho em equipe",
+          "atendimento ao público",
+          "educação",
+          "ambientes colaborativos"
+        ]
+      }
+    }
+  },
+  "choleric": {
+    "desc": "O colérico é movido pela ação e pela conquista. Com uma personalidade forte, determinada e voltada para resultados, esse temperamento é naturalmente inclinado à liderança. Pessoas coléricas são rápidas em tomar decisões, enfrentam desafios com coragem e têm grande capacidade de iniciativa.",
+    "combinations": {
+      "sanguine": {
+        "desc": "Essa combinação é pura energia e iniciativa. O colérico traz determinação e foco, enquanto o sanguíneo adiciona carisma e espontaneidade. Pessoas com esse perfil são líderes entusiasmados, que inspiram e mobilizam os outros com facilidade.",
+        "characteristic": [
+          "Extrovertido, confiante e motivador",
+          "Gosta de desafios e de estar em movimento",
+          "Tem facilidade em influenciar e persuadir"
+        ],
+        "challenges": [
+          "Pode ser impulsivo e impaciente",
+          "Tende a priorizar ação sobre reflexão"
+        ],
+        "skills": [
+          "Empreendedorismo",
+          "Liderança em vendas",
+          "Projetos que exigem iniciativa e comunicação"
+        ]
+      },
+      "melancholic": {
+        "desc": "Aqui temos uma personalidade intensa e estratégica. O colérico fornece energia e decisão, enquanto o melancólico contribui com análise e profundidade. Essa combinação gera pessoas focadas, organizadas e altamente exigentes consigo mesmas e com os outros.",
+        "characteristic": [
+          "Determinado, perfeccionista e disciplinado",
+          "Gosta de planejar e executar com excelência",
+          "Tem senso crítico apurado e alto padrão de qualidade"
+        ],
+        "challenges": [
+          "Pode ser rígido ou controlador",
+          "Tende à impaciência com erros ou imprevistos"
+        ],
+        "skills": [
+          "Gestão de projetos",
+          "Engenharia",
+          "Áreas técnicas",
+          "Liderança em ambientes estruturados"
+        ]
+      },
+      "phlegmatic": {
+        "desc": "Essa combinação equilibra ação com estabilidade. O colérico traz iniciativa e foco, enquanto o fleumático oferece paciência e diplomacia. Pessoas com esse perfil são estrategistas eficazes, capazes de liderar com firmeza sem perder a empatia.",
+        "characteristic": [
+          "Racional, persistente e confiável",
+          "Gosta de resolver problemas com eficiência",
+          "Tem autocontrole e visão de longo prazo"
+        ],
+        "challenges": [
+          "Pode ser reservado ou excessivamente pragmático",
+          "Tende a evitar demonstrações emocionais"
+        ],
+        "skills": [
+          "Administração",
+          "Gestão de equipes",
+          "Planejamento estratégico",
+          "Ambientes que exigem equilíbrio entre ação e análise"
+        ]
+      }
+    }
+  },
+  "melancholic": {
+    "desc": "O melancólico é o pensador profundo. Sensível, introspectivo e analítico, esse temperamento valoriza a lógica, a estética e a profundidade emocional. Melancólicos são perfeccionistas e detalhistas, com grande capacidade de concentração e reflexão.",
+    "combinations": {
+      "sanguine": {
+        "desc": "Aqui temos uma personalidade que equilibra profundidade com leveza. O melancólico traz introspecção e sensibilidade, enquanto o sanguíneo adiciona sociabilidade e entusiasmo. Pessoas com esse perfil são criativas, empáticas e comunicativas, mas com um toque de refinamento.",
+        "characteristic": [
+          "Sensível, artístico e expressivo",
+          "Gosta de se conectar com os outros de forma autêntica",
+          "Tem senso estético e emocional apurado"
+        ],
+        "challenges": [
+          "Pode oscilar entre entusiasmo e melancolia",
+          "Tende à insegurança e à autocrítica"
+        ],
+        "skills": [
+          "Artes",
+          "Psicologia",
+          "Educação",
+          "Comunicação com propósito"
+        ]
+      },
+      "choleric": {
+        "desc": "Essa é uma combinação poderosa de profundidade emocional com força de ação. O melancólico traz análise e sensibilidade, enquanto o colérico adiciona determinação e foco. O resultado é alguém altamente exigente, com padrões elevados e grande capacidade de realização.",
+        "characteristic": [
+          "Perfeccionista, disciplinado e determinado",
+          "Gosta de planejar com precisão e executar com excelência",
+          "Tem senso de justiça e ética muito forte"
+        ],
+        "challenges": [
+          "Pode ser crítico demais consigo e com os outros",
+          "Tende à rigidez e à dificuldade de lidar com erros"
+        ],
+        "skills": [
+          "Carreiras técnicas, jurídicas ou científicas",
+          "Liderança em ambientes exigentes"
+        ]
+      },
+      "phlegmatic": {
+        "desc": "Essa combinação é introspectiva, calma e extremamente confiável. O melancólico fornece profundidade e perfeccionismo, enquanto o fleumático contribui com paciência e estabilidade. Pessoas com esse perfil são discretas, leais e muito comprometidas com o que fazem.",
+        "characteristic": [
+          "Reservado, organizado e gentil",
+          "Gosta de ambientes tranquilos e estruturados",
+          "Tem grande capacidade de escuta e empatia"
+        ],
+        "challenges": [
+          "Pode ser indeciso ou evitar conflitos",
+          "Tende à passividade e ao isolamento"
+        ],
+        "skills": [
+          "Psicologia",
+          "Contabilidade",
+          "Biblioteconomia",
+          "Áreas que exigem precisão e cuidado"
+        ]
+      }
+    }
+  },
+  "phlegmatic": {
+    "desc": "O fleumático é o pacificador. Calmo, equilibrado e confiável, esse temperamento evita conflitos e prefere ambientes harmoniosos. Pessoas fleumáticas são excelentes ouvintes, pacientes e têm uma natureza estável que transmite segurança aos outros.",
+    "combinations": {
+      "sanguine": {
+        "desc": "Essa é uma combinação leve e sociável. O fleumático traz estabilidade e paciência, enquanto o sanguíneo adiciona simpatia e espontaneidade. Pessoas com esse perfil são agradáveis, conciliadoras e ótimas em ambientes colaborativos.",
+        "characteristic": [
+          "Amável, sociável e diplomático",
+          "Gosta de ajudar e manter a paz entre as pessoas",
+          "Tem facilidade em se adaptar e trabalhar em equipe"
+        ],
+        "challenges": [
+          "Pode ser indeciso ou procrastinar",
+          "Tende a evitar confrontos, mesmo quando necessários"
+        ],
+        "skills": [
+          "Recursos humanos",
+          "Atendimento ao cliente",
+          "Educação",
+          "Áreas sociais"
+        ]
+      },
+      "choleric": {
+        "desc": "Essa combinação une a calma do fleumático com a determinação do colérico. Pessoas com esse perfil são estrategistas natos: agem com firmeza, mas sem perder a compostura. São líderes silenciosos, que preferem resultados a holofotes.",
+        "characteristic": [
+          "Racional, persistente e focado",
+          "Gosta de resolver problemas com eficiência e discrição",
+          "Tem autocontrole e visão de longo prazo"
+        ],
+        "challenges": [
+          "Pode ser reservado demais ou parecer frio",
+          "Tende a evitar conflitos diretos, mesmo quando necessários"
+        ],
+        "skills": [
+          "Gestão",
+          "Planejamento estratégico",
+          "Áreas técnicas e administrativas"
+        ]
+      },
+      "melancholic": {
+        "desc": "Essa combinação é introspectiva, confiável e muito detalhista. O fleumático oferece paciência e constância, enquanto o melancólico contribui com profundidade e perfeccionismo. Pessoas com esse perfil são discretas, leais e altamente comprometidas.",
+        "characteristic": [
+          "Calmo, organizado e sensível",
+          "Gosta de ambientes tranquilos e estruturados",
+          "Tem grande capacidade de escuta e empatia"
+        ],
+        "challenges": [
+          "Pode ser passivo ou evitar mudanças",
+          "Tende à indecisão e à autocrítica silenciosa"
+        ],
+        "skills": [
+          "Psicologia",
+          "Contabilidade",
+          "Biblioteconomia",
+          "Áreas que exigem precisão e cuidado"
+        ]
+      }
     }
   }
 }
