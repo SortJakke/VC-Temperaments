@@ -5,7 +5,7 @@ import Footer from "../components/Footer"
 
 export default function Home() {
   return (
-    <div className="h-screen overflow-y-scroll mb-[52px] md:h-auto md:overflow-hidden md:mb-0 md:mt-[58px]">
+    <div className="h-screen overflow-y-scroll pb-[52px] md:h-auto md:overflow-hidden md:pb-0 md:pt-[58px]">
       <Hero />
       <History />
       <TemperamentsCards />

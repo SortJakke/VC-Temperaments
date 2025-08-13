@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { Questions } from "../components/Questions"
 import questionsJson from "../data/questions.json"
 
@@ -7,6 +7,7 @@ const QUESTIONS_PER_PAGE = 10
 
 export default function Quiz() {
   const data = questionsJson.questions
+  const navigate = useNavigate()
 
   const [selected, setSelected] = useState<number[]>([])
   const [currentPage, setCurrentPage] = useState<number>(1)
@@ -15,12 +16,6 @@ export default function Quiz() {
     const saved = JSON.parse(localStorage.getItem("answers") || "[]")
     setSelected(saved)
   }, [])
-
-  useEffect(() => {
-    if (selected.length > 0) {
-      localStorage.setItem("answers", JSON.stringify(selected))
-    }
-  }, [selected])
 
   const totalPages = Math.ceil(data.length / QUESTIONS_PER_PAGE)
   const start = (currentPage - 1) * QUESTIONS_PER_PAGE
@@ -52,8 +47,17 @@ export default function Quiz() {
     )
   }
 
+  const handleResult = () => {
+    if (selected.length === 0) {
+      alert("Você precisa completar o teste antes de ver o resultado.")
+      return
+    }
+    localStorage.setItem("answers", JSON.stringify(selected))
+    navigate("/resultado")
+  }
+
   return (
-    <div className="h-screen overflow-y-scroll mb-[52px] md:h-auto md:overflow-hidden md:mb-0 md:mt-[58px]">
+    <div className="h-screen overflow-y-scroll pb-[52px] md:h-auto md:min-h-screen md:overflow-hidden md:pb-0 md:pt-[58px]">
       <section className="bg-emerald-600 flex flex-col md:text-center md:items-center justify-center px-6 py-8">
         <h1 className="text-4xl font-bold text-gray-200 mb-4">
           Teste de Temperamento
@@ -96,12 +100,12 @@ export default function Quiz() {
 
         <div>
           {currentPage === totalPages && (
-            <Link
-              to="/resultado"
+            <button
+              onClick={handleResult}
               className="px-6 py-3 bg-green-600 text-white font-medium rounded hover:bg-green-700 transition"
             >
               Ver Resultado
-            </Link>
+            </button>
           )}
         </div>
       </section>

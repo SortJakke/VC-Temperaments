@@ -15,7 +15,7 @@ const RetakeTest: React.FC = () => {
     <section className="w-full md:w-4xl mx-auto px-6 text-center md:text-right">
       <button
         onClick={() => setConfirm(true)}
-        className="cursor-pointer bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-6 rounded shadow-md transition duration-300"
+        className="w-[150px] cursor-pointer bg-red-500 hover:bg-red-700 text-white font-bold py-2 rounded shadow-md transition duration-300"
       >
         Refazer Teste
       </button>

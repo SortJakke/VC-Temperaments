@@ -9,12 +9,10 @@ interface Temperaments {
 
 interface Props {
   data: Temperaments
-  ref: Temperaments
 }
 
 function calcPercentage(
   obj: Temperaments,
-  reference: Temperaments
 ): Record<keyof Temperaments, number> {
   const result: Record<keyof Temperaments, number> = {
     choleric: 0,
@@ -23,10 +21,10 @@ function calcPercentage(
     sanguine: 0,
   }
 
-  for (const key of Object.keys(reference) as (keyof Temperaments)[]) {
-    const ref = reference[key]
+  for (const key of Object.keys(obj) as (keyof Temperaments)[]) {
+    const ref = 82
     const val = obj[key]
-    const percentage = ref === 0 ? 0 : (val / ref) * 100
+    const percentage = (val / ref) * 100
     result[key] = parseFloat(percentage.toFixed())
   }
 
@@ -67,8 +65,8 @@ const TemperamentProfiles: Record<string, TemperamentData> = {
   },
 }
 
-const TestAnalysis: React.FC<Props> = ({ data, ref }) => {
-  const percentage = calcPercentage(data, ref)
+const TestAnalysis: React.FC<Props> = ({ data }) => {
+  const percentage = calcPercentage(data)
 
   return (
     <section className="w-full md:w-4xl mx-auto px-6 grid gap-4 text-left">

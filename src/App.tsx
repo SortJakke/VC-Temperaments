@@ -8,7 +8,7 @@ import Temperaments from './pages/Temperaments';
 export default function App() {
 
   return (
-    <div className="min-h-screen bg-gray-200 text-gray-800">
+    <div className="h-screen md:h-auto bg-gray-200 text-gray-800">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

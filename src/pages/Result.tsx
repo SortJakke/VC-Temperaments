@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import questionsJson from "../data/questions.json"
 
 import HeroResult from "../components/result/HeroResult"
 import TestAnalysis from "../components/result/TestAnalysis"
 import AboutResult from "../components/result/AboutResult"
 import Temperaments from "./Temperaments"
+import EditTest from "../components/result/EditTest"
 import RetakeTest from "../components/result/RetakeTest"
 import Footer from "../components/Footer"
 
@@ -23,6 +25,8 @@ export default function Result() {
     sanguine: 0,
   })
 
+  const navigate = useNavigate()
+
   const score = questionsJson.result
 
   const cholericIds = score.choleric
@@ -30,16 +34,8 @@ export default function Result() {
   const phlegmaticIds = score.phlegmatic
   const sanguineIds = score.sanguine
 
-  const reference = {
-    choleric: cholericIds.length,
-    melancholic: melancholicIds.length,
-    phlegmatic: phlegmaticIds.length,
-    sanguine: sanguineIds.length,
-  }
-
   useEffect(() => {
     const answers = JSON.parse(localStorage.getItem("answers") || "[]")
-
     const coincidences = (group: number[]) =>
       answers.filter((id: number) => group.includes(id)).length
 
@@ -59,15 +55,49 @@ export default function Result() {
     return [topTwo[0][0] as Temperaments, topTwo[1][0] as Temperaments]
   }
 
+  const noAnswers = Object.values(data).every((valor) => valor === 0)
+
+  const NoAnswers = () => {
+    return (
+      <div className="flex justify-center items-center p-6">
+        <div className="w-full max-w-[400px] bg-white p-6 rounded-lg shadow text-center">
+          <h2 className="text-2xl mb-4 text-red-500">🚫 Acesso Negado</h2>
+          <p className="text-lg mb-4 text-gray-800">
+            Você precisa completar o teste antes de visualizar o resultado.
+          </p>
+          <button
+            className="cursor-pointer py-3 px-6 text-lg bg-blue-500 text-white rounded-lg"
+            onClick={() => {
+              navigate("/teste")
+            }}
+          >
+            Ir para o Teste
+          </button>
+        </div>
+      </div>
+    )
+  }
+  const HasAnswers = () => {
+    return (
+      <div className="grid gap-8">
+        <HeroResult
+          primary={getTopTwo(data)[0]}
+          secundary={getTopTwo(data)[1]}
+        />
+        <AboutResult
+          primary={getTopTwo(data)[0]}
+          secundary={getTopTwo(data)[1]}
+        />
+        <TestAnalysis data={data} />
+        <EditTest />
+        <RetakeTest />
+      </div>
+    )
+  }
+
   return (
-    <div className="h-screen grid gap-12 overflow-y-scroll mb-[52px] md:h-auto md:overflow-hidden md:mb-0 md:mt-[58px]">
-      <HeroResult primary={getTopTwo(data)[0]} secundary={getTopTwo(data)[1]} />
-      <AboutResult
-        primary={getTopTwo(data)[0]}
-        secundary={getTopTwo(data)[1]}
-      />
-      <TestAnalysis data={data} ref={reference} />
-      <RetakeTest />
+    <div className="h-screen flex flex-col justify-between overflow-y-scroll pb-[52px] md:h-auto md:min-h-screen md:overflow-hidden md:pb-0 md:pt-[58px]">
+      {noAnswers ? <NoAnswers /> : <HasAnswers />}
       <Footer />
     </div>
   )

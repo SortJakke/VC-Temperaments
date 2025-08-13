@@ -3,6 +3,8 @@ import { Link } from "react-router-dom"
 import heroImage from "../../assets/hero-bg.svg"
 
 export default function Hero() {
+  const answers = JSON.parse(localStorage.getItem("answers") || "[]")
+
   return (
     <section
       id="hero"
@@ -16,11 +18,19 @@ export default function Hero() {
           Baseado na teoria clássica dos quatro temperamentos, nosso teste
           revela qual perfil domina sua forma de sentir e agir.
         </p>
-        <Link to={"/teste"}>
-          <button className="cursor-pointer mt-6 px-6 py-3 bg-amber-600 text-white rounded-full hover:bg-amber-800 transition">
-            Começar o Teste
-          </button>
-        </Link>
+        {answers.length > 0 ? (
+          <Link to={"/resultado"}>
+            <button className="cursor-pointer mt-6 px-6 py-3 bg-amber-600 text-white rounded-full hover:bg-amber-800 transition">
+              Ver Resultado
+            </button>
+          </Link>
+        ) : (
+          <Link to={"/teste"}>
+            <button className="cursor-pointer mt-6 px-6 py-3 bg-amber-600 text-white rounded-full hover:bg-amber-800 transition">
+              Começar o Teste
+            </button>
+          </Link>
+        )}
       </div>
       <img
         src={heroImage}

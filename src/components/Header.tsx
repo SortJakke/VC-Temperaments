@@ -9,19 +9,30 @@ import {
 export default function Header() {
   const location = useLocation()
 
+  const savedAnswers = JSON.parse(localStorage.getItem("answers") || "[]")
+
   const links = [
     { name: "Início", path: "/", icon: <HomeIcon className="w-5 h-5" /> },
-    { name: "Teste", path: "/teste", icon: <PencilIcon className="w-5 h-5" /> },
     {
       name: "Temperamentos",
       path: "/temperamentos",
       icon: <UserGroupIcon className="w-5 h-5" />,
     },
-    {
-      name: "Resultado",
-      path: "/resultado",
-      icon: <ChartBarIcon className="w-5 h-5" />,
-    },
+    ...(savedAnswers.length === 0
+      ? [
+          {
+            name: "Teste",
+            path: "/teste",
+            icon: <PencilIcon className="w-5 h-5" />,
+          },
+        ]
+      : [
+          {
+            name: "Resultado",
+            path: "/resultado",
+            icon: <ChartBarIcon className="w-5 h-5" />,
+          },
+        ]),
   ]
 
   return (
@@ -31,7 +42,7 @@ export default function Header() {
           <div className="max-w-6xl mx-auto px-8 py-4 flex justify-between items-center">
             <Link to={"/"} className="flex items-center gap-2">
               <h1 className="text-xl font-bold text-gray-500">
-                <span className="text-emerald-500">4</span> Temperamentos
+                <span className="text-emerald-500">4</span> Temperus
               </h1>
             </Link>
             <ul className="flex gap-8">
